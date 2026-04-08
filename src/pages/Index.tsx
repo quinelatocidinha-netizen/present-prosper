@@ -1,16 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from "@/components/landing/Hero";
+import Marquee from "@/components/landing/Marquee";
+import PainPoints from "@/components/landing/PainPoints";
+import BasicsDoneRight from "@/components/landing/BasicsDoneRight";
+import Transformation from "@/components/landing/Transformation";
+import WhatYouLearn from "@/components/landing/WhatYouLearn";
+import Pillars from "@/components/landing/Pillars";
+import SimpleRoutine from "@/components/landing/SimpleRoutine";
+import ActionPlan from "@/components/landing/ActionPlan";
+import SocialProof from "@/components/landing/SocialProof";
+import Guarantee from "@/components/landing/Guarantee";
+import FAQ from "@/components/landing/FAQ";
+import FinalCTA from "@/components/landing/FinalCTA";
+import Footer from "@/components/landing/Footer";
+import StickyCTA from "@/components/landing/StickyCTA";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Hero />
+      <Marquee />
+      <PainPoints />
+      <BasicsDoneRight />
+      <Transformation />
+      <WhatYouLearn />
+      <Pillars />
+      <SimpleRoutine />
+      <ActionPlan />
+      <SocialProof />
+      <Guarantee />
+      <FAQ />
+      <FinalCTA />
+      <Footer />
+      <StickyCTA />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
