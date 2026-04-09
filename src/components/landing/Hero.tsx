@@ -22,8 +22,8 @@ export default function Hero() {
     >
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px]" />
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] rounded-full bg-accent/5 blur-[100px]" />
         {/* Grid subtle */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -34,21 +34,21 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative w-full max-w-7xl mx-auto px-5 md:px-8 py-24 md:py-32">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center">
+      <div className="relative w-full max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-20 items-center">
           {/* Left content */}
           <div className="max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 animate-fade-up">
+            <div className="inline-flex items-center gap-2 mb-6 md:mb-8 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-primary/20 bg-primary/5 animate-fade-up">
               <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-soft" />
-              <span className="text-xs font-sans font-medium tracking-wide uppercase text-primary">
+              <span className="text-[10px] md:text-xs font-sans font-medium tracking-wide uppercase text-primary">
                 Guia prático para pequenos negócios
               </span>
             </div>
 
             {/* Headline */}
             <h1
-              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.15] tracking-tight text-foreground mb-6 animate-fade-up"
+              className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[3.4rem] font-bold leading-[1.15] tracking-tight text-foreground mb-5 md:mb-6 animate-fade-up"
               style={{ animationDelay: "100ms" }}
             >
               Seu negócio não precisa parecer grande.{" "}
@@ -59,7 +59,7 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p
-              className="font-sans text-base md:text-lg leading-relaxed text-muted-foreground max-w-xl mb-8 animate-fade-up"
+              className="font-sans text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground max-w-xl mb-6 md:mb-8 animate-fade-up"
               style={{ animationDelay: "200ms" }}
             >
               Um guia prático para pequenos empresários, comércios locais e prestadores de serviço que querem transmitir mais confiança, ser mais encontrados e fortalecer sua presença digital no Instagram e no Google.
@@ -67,7 +67,7 @@ export default function Hero() {
 
             {/* Bullets */}
             <ul
-              className="space-y-3 mb-10 animate-fade-up"
+              className="space-y-2.5 md:space-y-3 mb-8 md:mb-10 animate-fade-up"
               style={{ animationDelay: "300ms" }}
             >
               {bullets.map((b, i) => (
@@ -82,12 +82,12 @@ export default function Hero() {
 
             {/* CTAs */}
             <div
-              className="flex flex-col sm:flex-row items-start gap-4 mb-8 animate-fade-up"
+              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 mb-6 md:mb-8 animate-fade-up"
               style={{ animationDelay: "400ms" }}
             >
               <a
                 href={CTA_LINK}
-                className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-sans font-semibold text-base text-primary-foreground bg-primary hover:brightness-110 transition-all duration-200 shadow-lg"
+                className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-sans font-semibold text-base text-primary-foreground bg-primary hover:brightness-110 transition-all duration-200 shadow-lg"
                 style={{ boxShadow: "var(--shadow-emerald)" }}
               >
                 Quero meu eBook agora
@@ -95,7 +95,7 @@ export default function Hero() {
               </a>
               <button
                 onClick={scrollToContent}
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-sans font-medium text-sm text-muted-foreground hover:text-foreground border border-border hover:border-primary/30 transition-all duration-200 bg-transparent"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-sans font-medium text-sm text-muted-foreground hover:text-foreground border border-border hover:border-primary/30 transition-all duration-200 bg-transparent"
               >
                 Ver o que você vai aprender
                 <ChevronDown className="w-4 h-4" />
@@ -111,9 +111,9 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Right - Mockup */}
+          {/* Right - Mockup: visible on all screens */}
           <div
-            className="hidden lg:flex justify-center animate-fade-up"
+            className="flex justify-center lg:justify-end animate-fade-up"
             style={{ animationDelay: "300ms" }}
           >
             <EbookMockup size="lg" />

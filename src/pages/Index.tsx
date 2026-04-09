@@ -9,6 +9,7 @@ import SimpleRoutine from "@/components/landing/SimpleRoutine";
 import ActionPlan from "@/components/landing/ActionPlan";
 import SocialProof from "@/components/landing/SocialProof";
 import Guarantee from "@/components/landing/Guarantee";
+import Pricing from "@/components/landing/Pricing";
 import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
@@ -28,6 +29,7 @@ const Index = () => {
       <ActionPlan />
       <SocialProof />
       <Guarantee />
+      <Pricing />
       <FAQ />
       <FinalCTA />
       <Footer />
