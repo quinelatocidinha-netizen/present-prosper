@@ -1,71 +1,60 @@
 
-# Landing Page Premium — eBook "Seu Negócio Mais Profissional no Instagram e no Google"
 
-## Objetivo
-Landing page de vendas com direção de arte editorial-comercial premium. Fundo escuro azul-petróleo, acentos verde-esmeralda, tipografia forte. R$ 47,00 via Hotmart (link placeholder). Design autoral, longe de template.
+# Adicionar capa do eBook + Seção de Preço + Responsividade Mobile-First
 
-## Identidade Visual
-- **Paleta:** fundo #1a2332 a #1e3044, acentos #2dd4a8/#3cb5a0, texto branco/off-white, cards em variações sutis do fundo
-- **Tipografia:** headings bold com tracking refinado, corpo leve e legível
-- **Atmosfera:** editorial premium, composições assimétricas, respiro generoso, microdetalhes elegantes
+## 1. Copiar imagens do eBook para o projeto
+- Salvar a imagem da capa (`Ebook-Seu-Negocio-Mais-Profissional-no-Instagram-e-no-Google.png`) em `public/ebook-cover.png`
+- Salvar screenshot adicional em `public/ebook-screenshot.png`
 
-## Estrutura (14 seções)
+## 2. Atualizar `EbookMockup.tsx`
+- Remover conteúdo gerado (textos, ícones, SVGs internos)
+- Usar `<img src="/ebook-cover.png">` com `object-cover` preenchendo o "corpo do livro"
+- Manter efeitos 3D, spine, glow e shadow existentes
+- Ajustar tamanhos para mobile-first: `w-40 h-56` → `sm:w-48 sm:h-64` → `md:w-72 md:h-96` → `lg:w-80 lg:h-[28rem]`
 
-### 1. Hero Premium
-Split assimétrico: mockup 3D do eBook à direita, headline forte à esquerda. Selo "Guia prático para pequenos negócios", headline, subheadline, 4 bullets, CTA principal verde-esmeralda, CTA secundário para scroll. Microprova "R$ 47,00 · acesso imediato".
+## 3. Criar `src/components/landing/Pricing.tsx`
+Seção premium de preço com:
+- Headline: "Tudo isso por um único investimento"
+- Preço destaque: **R$ 47,00** à vista
+- Badge: **ou 3x de R$ 16,77**
+- Lista de 8 itens inclusos com checkmarks
+- CTA verde-esmeralda "Quero meu eBook agora"
+- Trust badges (acesso imediato, garantia 7 dias, pagamento seguro)
+- Mockup do eBook ao lado no desktop, oculto no mobile
+- Card com borda primary, gradiente sutil, accent line no topo
 
-### 2. Marquee Estratégico
-Faixa animada com frases curtas em loop suave ("Mais clareza", "Mais confiança", etc.). Pausa no hover, respeita prefers-reduced-motion.
+## 4. Atualizar `Index.tsx`
+Inserir `<Pricing />` entre `<Guarantee />` e `<FAQ />`
 
-### 3. Bloco de Identificação com a Dor
-Título emocional + grid autoral com 10 cards de dores reais (bio confusa, feed parado, etc.). Composição assimétrica, ícones minimalistas, animações stagger no scroll.
+## 5. Ajustes de responsividade mobile-first em todos os componentes
 
-### 4. Bloco "O Básico Bem Feito"
-Seção conceitual com 3 pilares (Organização, Clareza, Presença) em layout editorial assimétrico com linhas decorativas e profundidade sutil.
+**Hero.tsx:**
+- Mostrar mockup em todas as telas (atualmente `hidden lg:flex`), com tamanho menor em mobile
+- CTAs empilhados em mobile (já funciona), garantir padding adequado
 
-### 5. Seção de Transformação (Antes x Depois)
-Duas colunas com tratamento visual diferenciado — lado "antes" mais opaco/desfocado, lado "depois" vibrante e nítido. Sem clichê de tabela comparativa.
+**PainPoints.tsx:**
+- Grid de cards: `grid-cols-1 sm:grid-cols-2 lg:grid-cols-5`  (atualmente `grid-cols-2` pode ficar apertado em 320px)
 
-### 6. O Que Você Vai Aprender
-Grid editorial com 10 tópicos reais do eBook. Numeração refinada, divisões editoriais, ícones minimalistas. Composição intercalada, não lista simples.
+**WhatYouLearn.tsx:**
+- Grid: `grid-cols-1 md:grid-cols-2` (já está OK)
 
-### 7. Bio, Destaques, Conteúdo e Google
-4 blocos com layouts alternados (imagem/texto zig-zag), cada pilar com explicação concisa e visual diferenciado.
+**ActionPlan.tsx:**
+- Timeline no mobile: todos alinhados à esquerda (já funciona)
+- Garantir padding consistente em telas pequenas
 
-### 8. Rotina Simples
-Seção com ícones de frequência e visual de checklist premium. Tom prático e acessível.
+**SocialProof.tsx:**
+- Grid: `grid-cols-1 md:grid-cols-3` (atualmente `md:grid-cols-3` sem `grid-cols-1` — verificar)
 
-### 9. Plano de Ação de 7 Dias
-Timeline vertical premium com animação de progresso no scroll. Cada dia com ícone, título e descrição curta. Visual autoral e bem animado.
+**FinalCTA.tsx:**
+- Mostrar mockup no mobile com tamanho menor (atualmente `hidden lg:block`)
 
-### 10. Prova Social
-3 depoimentos placeholder com avatar, nome, tipo de negócio. Visual premium com aspas estilizadas.
+**Todas as seções:**
+- Garantir `px-5` mínimo em todos os containers
+- Textos responsivos com `text-xl sm:text-2xl md:text-3xl lg:text-4xl` pattern
+- Espaçamento vertical `py-16 md:py-24 lg:py-32`
 
-### 11. Garantia de 7 Dias
-Selo visual premium com badge, texto claro e responsável. Bloco de redução de risco.
+## Detalhes técnicos
+- Imagens com `loading="lazy"` para performance
+- Pricing section usa ScrollReveal existente
+- Mobile-first: todos os estilos base são para mobile, breakpoints adicionam complexidade
 
-### 12. FAQ
-Accordion autoral com 6 perguntas. Visual sofisticado, não genérico.
-
-### 13. CTA Final
-Headline de fechamento + mockup do eBook + CTA verde-esmeralda + reforço de preço.
-
-### 14. Rodapé
-Quinelato Giuseppe Soluções Web e Tecnológicas, links legais, contato, copyright.
-
-## Motion & UX
-- Scroll reveal com fade+translate e stagger em listas/cards (Intersection Observer)
-- Hover states sofisticados em botões e cards
-- Sticky CTA no mobile após scroll
-- prefers-reduced-motion respeitado globalmente
-- Lazy loading em imagens abaixo da dobra
-- Imagens de banco via Unsplash (pequenos negócios, comércio local)
-
-## SEO
-Title, meta description e Open Graph preparados para o eBook.
-
-## Estrutura Técnica
-- Componentes por seção em `src/components/landing/`
-- CSS custom properties para a paleta do eBook no index.css
-- Hooks reutilizáveis para scroll animation e marquee
-- Mobile-first, responsivo
