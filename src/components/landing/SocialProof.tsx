@@ -24,29 +24,29 @@ const testimonials = [
 
 export default function SocialProof() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-16 md:py-24 lg:py-32">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-5 md:px-8">
-        <ScrollReveal className="text-center mb-16">
+        <ScrollReveal className="text-center mb-10 md:mb-16">
           <p className="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-primary mb-4">
             Quem já aplicou
           </p>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight">
+          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
             Resultados reais de quem começou{" "}
             <span className="text-primary">pelo básico</span>
           </h2>
         </ScrollReveal>
 
         <ScrollReveal stagger>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {testimonials.map(({ name, role, text, initials }, i) => (
               <div
                 key={i}
-                className="relative p-7 md:p-8 rounded-2xl border border-border/30 bg-card/40 hover:bg-card/60 transition-all duration-300 group"
+                className="relative p-6 md:p-8 rounded-2xl border border-border/30 bg-card/40 hover:bg-card/60 transition-all duration-300 group"
               >
                 {/* Quote mark */}
-                <Quote className="w-8 h-8 text-primary/15 mb-4 group-hover:text-primary/25 transition-colors" />
+                <Quote className="w-7 h-7 md:w-8 md:h-8 text-primary/15 mb-4 group-hover:text-primary/25 transition-colors" />
 
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">

@@ -30,15 +30,15 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-16 md:py-24 lg:py-32">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="relative max-w-3xl mx-auto px-5 md:px-8">
-        <ScrollReveal className="text-center mb-12">
+        <ScrollReveal className="text-center mb-8 md:mb-12">
           <p className="text-xs font-sans font-semibold tracking-[0.2em] uppercase text-primary mb-4">
             Dúvidas frequentes
           </p>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight">
+          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
             Perguntas e respostas
           </h2>
         </ScrollReveal>
@@ -49,12 +49,12 @@ export default function FAQ() {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="border border-border/30 rounded-xl px-6 bg-card/30 hover:bg-card/50 transition-colors data-[state=open]:bg-card/50 data-[state=open]:border-primary/20"
+                className="border border-border/30 rounded-xl px-5 md:px-6 bg-card/30 hover:bg-card/50 transition-colors data-[state=open]:bg-card/50 data-[state=open]:border-primary/20"
               >
-                <AccordionTrigger className="font-sans text-sm md:text-base font-medium text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="font-sans text-sm md:text-base font-medium text-foreground hover:no-underline py-4 md:py-5">
                   {q}
                 </AccordionTrigger>
-                <AccordionContent className="font-sans text-sm text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="font-sans text-sm text-muted-foreground leading-relaxed pb-4 md:pb-5">
                   {a}
                 </AccordionContent>
               </AccordionItem>
