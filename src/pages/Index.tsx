@@ -29,6 +29,7 @@ const Index = () => {
       <ActionPlan />
       <SocialProof />
       <Guarantee />
+      <Pricing />
       <FAQ />
       <FinalCTA />
       <Footer />
