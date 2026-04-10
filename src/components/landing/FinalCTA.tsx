@@ -16,7 +16,7 @@ export default function FinalCTA() {
       <div className="relative max-w-5xl mx-auto px-5 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center">
           <ScrollReveal>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4 md:mb-6">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.3] mb-4 md:mb-6"> mb-4 md:mb-6">
               Sua empresa não precisa parecer grande.{" "}
               <span className="text-primary">
                 Precisa parecer clara, confiável e presente.
