@@ -48,7 +48,7 @@ export default function Hero() {
 
             {/* Headline */}
             <h1
-              className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[3.4rem] font-bold leading-[1.15] tracking-tight text-foreground mb-5 md:mb-6 animate-fade-up"
+              className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[3.4rem] font-bold leading-[1.3] tracking-tight text-foreground mb-5 md:mb-6 animate-fade-up"
               style={{ animationDelay: "100ms" }}
             >
               Seu negócio não precisa parecer grande.{" "}
