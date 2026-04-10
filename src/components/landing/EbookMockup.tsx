@@ -25,7 +25,7 @@ export default function EbookMockup({ className, size = "md" }: EbookMockupProps
         className={cn(
           sizeClasses[size],
           "relative rounded-lg overflow-hidden shadow-2xl",
-          "border border-primary/20",
+          "",
           "transform perspective-800 rotate-y-[-4deg] group-hover:rotate-y-0 transition-transform duration-500"
         )}
         style={{
