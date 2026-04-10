@@ -1,22 +1,27 @@
 
 
-# 3 Ajustes: Bordas do Mockup, Fontes do Preço e Meta Pixel
+# Remover sombra verde do eBook + Aumentar espaçamento do título
 
-## 1. Remover bordas do EbookMockup
-Em `EbookMockup.tsx`, remover `border border-primary/20` do div do "Book body" (linha 28). Isso elimina a borda visível ao redor da imagem do eBook em todas as instâncias (Hero, Pricing, FinalCTA).
+## 1. Limpar EbookMockup (`src/components/landing/EbookMockup.tsx`)
 
-## 2. Aumentar tamanho da fonte dos valores na Pricing
-Em `Pricing.tsx`:
-- Preço principal "R$ 47": de `text-4xl sm:text-5xl md:text-6xl` → `text-5xl sm:text-6xl md:text-7xl`
-- Centavos ",00": de `text-xl sm:text-2xl` → `text-2xl sm:text-3xl md:text-4xl`
-- Parcelamento "3x de R$ 16,77": de `text-sm` → `text-base sm:text-lg`
+Remover todos os efeitos decorativos, deixando apenas a imagem:
+- **Linha 18**: Remover o div "Glow behind" (`bg-primary/20 blur-3xl`)
+- **Linha 21**: Remover o div "Book shadow" (`bg-background/80 blur-xl`)
+- **Linha 33**: Remover o `boxShadow` inline que tem cor verde (`hsl(163 67% 50% / 0.15)`)
+- **Linha 37**: Remover o div "Spine highlight" (`bg-gradient-to-b from-primary/60`)
+- **Linha 48**: Remover o div "Subtle texture overlay" (`bg-gradient-to-t ... to-primary/5`)
+- Classe `shadow-2xl` também será removida
 
-## 3. Adicionar Meta Pixel ao index.html
-- Inserir o `<script>` do Facebook Pixel no `<head>` (após as meta tags)
-- Inserir o `<noscript><img>` fallback no `<body>` (antes do `<div id="root">`)
+O componente ficará apenas com a imagem dentro de um container com tamanho responsivo.
+
+## 2. Aumentar espaçamento entre linhas do título
+
+Em `Hero.tsx` (linha 51), o `h1` tem `leading-[1.15]`. Alterar para `leading-[1.3]` para dar mais respiro entre as linhas.
+
+Em `FinalCTA.tsx` (linha 25), o `h2` tem `leading-tight`. Alterar para `leading-[1.3]` também.
 
 ### Arquivos alterados
 - `src/components/landing/EbookMockup.tsx`
-- `src/components/landing/Pricing.tsx`
-- `index.html`
+- `src/components/landing/Hero.tsx`
+- `src/components/landing/FinalCTA.tsx`
 
