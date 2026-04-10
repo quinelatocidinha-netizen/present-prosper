@@ -46,12 +46,12 @@ export default function Pricing() {
                 {/* Price block */}
                 <div className="mb-8">
                   <div className="flex flex-wrap items-baseline gap-3 mb-2">
-                    <span className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-primary">
+                    <span className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-primary">
                       R$ 47
                     </span>
-                    <span className="font-serif text-xl sm:text-2xl text-primary/70">,00</span>
+                    <span className="font-serif text-2xl sm:text-3xl md:text-4xl text-primary/70">,00</span>
                   </div>
-                  <p className="font-sans text-sm text-muted-foreground">
+                  <p className="font-sans text-base sm:text-lg text-muted-foreground">
                     ou{" "}
                     <span className="text-foreground font-semibold">3x de R$ 16,77</span>
                     <span className="text-muted-foreground/60"> sem juros</span>
