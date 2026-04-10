@@ -1,27 +1,12 @@
 
 
-# Remover sombra verde do eBook + Aumentar espaçamento do título
+# Aumentar espaçamento entre linhas do título no Hero
 
-## 1. Limpar EbookMockup (`src/components/landing/EbookMockup.tsx`)
+O `leading-[1.3]` atual ainda não é suficiente para o tamanho grande do título no desktop. Vou aumentar para `leading-[1.45]` no `Hero.tsx` e `FinalCTA.tsx`.
 
-Remover todos os efeitos decorativos, deixando apenas a imagem:
-- **Linha 18**: Remover o div "Glow behind" (`bg-primary/20 blur-3xl`)
-- **Linha 21**: Remover o div "Book shadow" (`bg-background/80 blur-xl`)
-- **Linha 33**: Remover o `boxShadow` inline que tem cor verde (`hsl(163 67% 50% / 0.15)`)
-- **Linha 37**: Remover o div "Spine highlight" (`bg-gradient-to-b from-primary/60`)
-- **Linha 48**: Remover o div "Subtle texture overlay" (`bg-gradient-to-t ... to-primary/5`)
-- Classe `shadow-2xl` também será removida
+## Alterações
 
-O componente ficará apenas com a imagem dentro de um container com tamanho responsivo.
+**`src/components/landing/Hero.tsx`** — alterar `leading-[1.3]` → `leading-[1.45]` no `h1`
 
-## 2. Aumentar espaçamento entre linhas do título
-
-Em `Hero.tsx` (linha 51), o `h1` tem `leading-[1.15]`. Alterar para `leading-[1.3]` para dar mais respiro entre as linhas.
-
-Em `FinalCTA.tsx` (linha 25), o `h2` tem `leading-tight`. Alterar para `leading-[1.3]` também.
-
-### Arquivos alterados
-- `src/components/landing/EbookMockup.tsx`
-- `src/components/landing/Hero.tsx`
-- `src/components/landing/FinalCTA.tsx`
+**`src/components/landing/FinalCTA.tsx`** — alterar `leading-[1.3]` → `leading-[1.45]` no `h2`
 
